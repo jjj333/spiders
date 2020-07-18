@@ -18,10 +18,7 @@ from mzitu_spider_single import *
 def mzitu(start_page, end_page):
     for i in range(start_page, end_page + 1):
         url = "https://www.mzitu.com/page/" + str(i)
-        headers = {
-            "referer": "https://www.mzitu.com/",
-            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
-        }
+        # headers 直接用mzitu_spider_single里的
         response = requests.get(url=url, headers=headers)
         html = response.content
         page = etree.HTML(html)

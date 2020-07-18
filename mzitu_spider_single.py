@@ -27,6 +27,7 @@ def mzitu_spider(url, file_name, folder):
     response = requests.get(url=url, headers=headers)
     time.sleep(0.5)
     data = response.content
+
     if not os.path.exists(folder):
         os.makedirs(folder)
     file = f'{folder}/{file_name}.jpg'
